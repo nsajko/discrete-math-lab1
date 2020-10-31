@@ -1,0 +1,3 @@
+Each directory contains an independent program as a solution to a simple mathematical problem. Each directory hosts an implementation in a different language, currently Julia and Fricas Spad.
+
+The math problem is this: given three distinct roots of the characteristic polynomial of a third order homogeneous linear recurrence relation with constant coefficients, the three initial (index 0, 1 and 2) values of the associated sequence and a nonnegative integer n, compute the nth element of the sequence. The root of the polynomial and the initial sequence values are real floating point values, with decimal input and output. Each program contains two mathematically distinct solutions to the problem, called method 1 and method 2.

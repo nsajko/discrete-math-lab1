@@ -37,27 +37,27 @@ function main()
 	local x::V = F[0, 0, 0]
 	local a::V = F[0, 0, 0]
 
-	print("Unesite prvo rješenje x_0 karakteristične jednadžbe: ")
+	print("Enter the first root of the characteristic polynomial: ")
 	x[1] = rd_lf()
-	print("Unesite drugo rješenje x_1 karakteristične jednadžbe: ")
+	print("Enter the second root of the characteristic polynomial: ")
 	x[2] = rd_lf()
-	print("Unesite treće rješenje x_2 karakteristične jednadžbe: ")
+	print("Enter the third root of the characteristic polynomial: ")
 	x[3] = rd_lf()
 
-	print("Unesite vrijednost nultog člana niza a_0: ")
+	print("Enter the zeroth member of the sequence: ")
 	a[1] = rd_lf()
-	print("Unesite vrijednost prvog člana niza a_1: ")
+	print("Enter the first member of the sequence: ")
 	a[2] = rd_lf()
-	print("Unesite vrijednost drugog člana niza a_2: ")
+	print("Enter the second member of the sequence: ")
 	a[3] = rd_lf()
 
-	print("Unesite redni broj n traženog člana niza: ")
+	print("Enter the index of the wanted member of the sequence: ")
 	local n::I = parse(BigInt, readline())
 
 	local out1 = lab1_method1(x, a, n)
 	local out2 = lab1_method2(x, a, n)
-	@printf("Vrijednost n-tog člana niza pomoću formule: %.15g\n", out1)
-	@printf("Vrijednost n-tog člana niza iz rekurzije: %.15g\n", out2)
+	@printf("Result using method 1: %.15g\n", out1)
+	@printf("Result using method 2: %.15g\n", out2)
 end
 
 end
