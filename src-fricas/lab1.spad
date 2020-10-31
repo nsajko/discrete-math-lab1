@@ -1,0 +1,32 @@
+)abbrev package DMLAB1 DiscreteMathLab1
+DiscreteMathLab1() : Exports == Implementation where
+    LM ==> LinearSystemMatrixPackage1(Float)
+    D ==> DirectProduct(3, Float)
+    V ==> Vector Float
+    M ==> Matrix Float
+    N ==> NonNegativeInteger
+    asN n ==> qcoerce(n)@N
+    Exports ==> with
+        lab1method1: (D, D, N) -> Float
+        lab1method2: (D, D, N) -> Float
+
+    Implementation ==> add
+        lab1method1(x: D, a: D, n: N) : Float ==
+            vand: M := matrix [[(x.j^i)@Float for j in 1..3] for i in 0..2]
+            v: V := a::V
+            dot(directProduct(particularSolution(vand, v)$LM::V), map(z +-> z^n, x))
+
+        lab1method2(x: D, a: D, n: N): Float ==
+            zero? n => a.1
+            n = 1   => a.2
+            n = 2   => a.3
+            c1: Float := x.1+x.2+x.3
+            c2: Float := -(x.1*x.2+x.2*x.3+x.3*x.1)
+            c3: Float := x.1*x.2*x.3
+            v: V := a::V
+            for i in 3..n repeat
+                v3: Float := v.3
+                v.3 := c1*v.3 + c2*v.2 + c3*v.1
+                v.1 := v.2
+                v.2 := v3
+            v.3
