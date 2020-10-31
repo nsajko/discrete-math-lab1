@@ -1,3 +1,5 @@
+-- Copyright 2020 Neven Sajko. All rights reserved.
+
 )abbrev package DMLAB1 DiscreteMathLab1
 DiscreteMathLab1() : Exports == Implementation where
     LM ==> LinearSystemMatrixPackage1(Float)
